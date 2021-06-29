@@ -8,9 +8,9 @@ function rearranger(arr) {
     //console.log('topNum :', topNum)
     arr.push(topNum)
 
-    console.log(arr[0])
-    console.log('full arr :', arr)
-    //return arr
+    //console.log(arr[0])
+    //console.log('full arr :', arr)
+    return arr
 }
 
 
@@ -23,6 +23,14 @@ function rearranger(arr) {
 // output: 42
 
 function largestNum(arr) {
+    highestNum = 0
+    for (i = 1; i <= arr.length; i++) {
+        if (arr[i] > highestNum) {
+            highestNum = arr[i]
+        }
+        //console.log(highestNum)
+    }
+    return highestNum
 }
 
 
@@ -35,6 +43,11 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i] *= arr.length)
+    }
+    return newArr
 }
 
 
@@ -70,7 +83,15 @@ let flights = [{
 
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
+    totalCost = 0
 
+    let foundFlight = flights.find(f => f.to.toUpperCase() == destination.toUpperCase())
+    if (firstClass == false) {
+        return foundFlight.prices.standard
+    } else {
+        return foundFlight.prices.firstClass
+        console.log(foundFlight)
+    }
 }
 
 
@@ -92,6 +113,12 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 
 function findById(id) {
 
+    let foundStaff = staff.find(staff => staff.id == id)
+
+    if (!foundStaff) {
+        return { error: "No user with that id." };
+    }
+    return foundStaff;
 }
 
 
