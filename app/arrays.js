@@ -4,6 +4,13 @@
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
+    let topNum = arr.shift()
+    //console.log('topNum :', topNum)
+    arr.push(topNum)
+
+    console.log(arr[0])
+    console.log('full arr :', arr)
+    //return arr
 }
 
 

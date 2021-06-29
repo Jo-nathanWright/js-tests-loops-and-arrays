@@ -46,10 +46,10 @@ function rangeDivisor(start, end, divisor) {
     output = 0
     for (i = start; i <= end; i++) {
         let divNum = i % divisor
-        console.log(divNum)
+        // console.log(divNum)
         if (divNum == 0) {
             output = output + 1
-            console.log('Hey')
+            // console.log('Hey')
         }
     }
     return output
